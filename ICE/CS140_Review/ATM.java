@@ -68,7 +68,8 @@ public class ATM
                if (amount <= balance)
                {
                   balance -= amount;
-                  balanceFile.println(balance);     
+                  balanceFile.printf("-%.2f\n", amount);
+                  balanceFile.printf("%.2f\n", balance);     
                   System.out.println("Transaction Complete.");
                }
                else
@@ -78,7 +79,8 @@ public class ATM
                System.out.print("Deposit. Enter an amount: ");
                amount = kb.nextDouble();
                balance += amount;
-               balanceFile.println(balance);
+               balanceFile.printf("+%.2f\n", amount);
+               balanceFile.printf("%.2f\n", balance);
                System.out.println("Transaction Complete.");
                break;
             case 4:
