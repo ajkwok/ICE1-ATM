@@ -28,15 +28,17 @@ public class ATM
       System.out.print("Welcome! Please enter your filename: ");
       String filename = kb.nextLine();
       File file = new File(filename);
-      Scanner inputFile = new Scanner(file);
-
+      
       // If the file does not exist, terminate the program.
       if (!file.exists())
       {
          System.out.print("File does not exist.");
          System.exit(0);
       }
-      FileWriter fw = new FileWriter(filename, false);
+      
+      Scanner inputFile = new Scanner(file);
+      
+      FileWriter fw = new FileWriter(filename, true);
       PrintWriter balanceFile = new PrintWriter(fw);
       
       double balance = 0;
